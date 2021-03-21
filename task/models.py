@@ -11,7 +11,7 @@ User = get_user_model()
 class Record(models.Model):
     user_login = models.CharField(max_length=20, help_text="Логин пользователя, добавившего фотографию")
     upload_datetime = models.DateTimeField(auto_now=True, help_text="Время добавления фотографии")
-    image = models.ImageField(upload_to=settings.MEDIA_ROOT)
+    image = models.ImageField(upload_to='media')
     history = HistoricalRecords()
 
     def get_absolute_url(self):
