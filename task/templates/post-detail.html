@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+    <h1>Запись от {{ record.upload_datetime }}</h1>
+    <h2>Фото:</h2>
+    <img src="{{ record.image }}" alt="">
+    <h3>История изменений</h3>
+    {%  for rec in record.history.all %}
+        <h4>{{ rec }}</h4>
+    {% endfor %}
+    <h3>Изменить фотографию записи:</h3>
+    <p>{{ massage }}</p>
+    <form action="" method="post" enctype="multipart/form-data" id="form">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Отправить" />
+    </form>
+{% endblock %}

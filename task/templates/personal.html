@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Личный кабинет</h1>
+
+    <h2>Ваши записи:</h2>
+    <div class="row">
+        {% for image in images %}
+            <div class="col-lg-4" style="margin-bottom: 60px">
+                <h3>{{ image.user_login }}</h3>
+                <img src="{{ image.image }}" alt="">
+                <h3>{{ image.upload_datetime }}</h3>
+                <a href="/change/{{ image.id }}"> <h3>Изменить</h3> </a>
+
+            </div>
+        {% endfor %}
+
+    </div>
+
+{% endblock %}
