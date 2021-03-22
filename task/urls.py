@@ -6,5 +6,5 @@ urlpatterns = [
     path('accounts/register', RegisterView.as_view(), name='register'),
     path('personal/', personal),
     path('change/<int:id>/', change_image, name='image-detail'),
-    path('/accounts/profile/', redirect_view)
+    path('accounts/profile/', redirect_view)
 ]
