@@ -4,7 +4,7 @@
 
     <h1>Запись от {{ record.upload_datetime }}</h1>
     <h2>Фото:</h2>
-    <img src="http://206.189.108.148/{{ record.image }}" alt="">
+    <img src="http://206.189.108.148/media/{{ record.image }}" alt="">
     <h3>История изменений</h3>
     {%  for rec in record.history.all %}
         <h4>{{ rec }}</h4>
