@@ -8,7 +8,7 @@
         {% for image in images %}
             <div class="col-lg-4" style="margin-bottom: 60px">
                 <h3>{{ image.user_login }}</h3>
-                <img src="{{ image.image }}" alt="">
+                <img src="https://sleepy-crag-16999.herokuapp.com/{{ image.image }}" alt="">
                 <h3>{{ image.upload_datetime }}</h3>
                 <a href="/change/{{ image.id }}"> <h3>Изменить</h3> </a>
 

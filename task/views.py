@@ -76,3 +76,7 @@ class RegisterView(FormView):
 
     def form_invalid(self, form):
         return super(RegisterView, self).form_invalid(form)
+
+
+def redirect_view(request):
+    return redirect('/')
