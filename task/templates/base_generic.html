@@ -16,6 +16,7 @@
 </head>
 <body>
     <ul>
+        <li> <a href="/"> Главная </a></li>
         {% if user.is_authenticated %}
                 <li>Пользователь: <a href="/personal">{{ user.get_username }} (личный кабинет)</a></li>
                 <li><a href="{% url 'logout'%}?next={{request.path}}">Выйти</a></li>
