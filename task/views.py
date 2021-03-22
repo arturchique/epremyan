@@ -16,6 +16,8 @@ def index(request):
             if form.is_valid():
                 post = form.save(commit=False)
                 post.user_login = user.username
+                if post.image.size >= 2097152:
+                    return
                 post.save()
         else:
             form = UploadRecordForm
@@ -53,6 +55,8 @@ def change_image(request, id):
         form = ChangePhotoForm(request.POST, request.FILES)
         if form.is_valid():
             image = form.cleaned_data['image']
+            if image.size >= 2097152:
+                return
             record.image = image
             record.save()
             return redirect("/change/id/")
